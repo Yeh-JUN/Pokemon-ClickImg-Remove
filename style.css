@@ -1,0 +1,8 @@
+.jumbotron{
+    background-image: url(./BG.jpg);
+    background-size: cover;
+}
+
+.jumbotron h1{
+    font-weight: 700;
+}
