@@ -120,13 +120,14 @@
             let autoAddAPic = document.getElementById('auto-add-a-pic');
             autoAddAPic.addEventListener('click' , ()=>{
                 autoAddAPicId = setInterval(addAPicFunc ,  700);
-                
+                autoAddAPic.disabled = true;
             });
 
             //stop add pic
             let stopAddPic = document.getElementById('stop-add-pic');
             stopAddPic.addEventListener('click' , ()=>{
                 clearInterval(autoAddAPicId);
+                autoAddAPic.disabled = false;
             });
             
 
@@ -227,6 +228,7 @@
                     container.removeChild(container.firstChild);
                 }
                 clearInterval(autoAddAPicId);
+                autoAddAPic.disabled = false;
                 pokemons = 1;
             }
             reset.addEventListener("click" , resetImg);
