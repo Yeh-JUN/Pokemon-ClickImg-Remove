@@ -20,24 +20,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-2">
-                    <button id="add-a-pic" class="btn-success">
-                        加一張寶可夢圖鑑
+                    <button id="add-a-pic" class="btn-success rounded">
+                        Click + 1
                     </button>
                 </div>
                 <div class="col-12 col-md-2">
-                    <button id="remove-a-pic" class="btn-danger">
-                        減一張寶可夢圖鑑
+                    <button id="remove-a-pic" class="btn-danger rounded">
+                        Click - 1
                     </button>
                 </div>
 
                 <div class="col-12 col-md-2">
-                    <button id="auto-add-a-pic" class="btn-primary">
-                        自動增加寶可夢圖鑑
+                    <button id="auto-add-a-pic" class="btn-primary rounded">
+                        Auto Create
                     </button>
                 </div>
                 <div class="col-12 col-md-2">
-                    <button id="stop-add-pic" class="btn-danger">
-                        暫停增加圖鑑
+                    <button id="stop-add-pic" class="btn-danger rounded">
+                        Stop Create
                     </button>
                 </div>
                 <!-- <div class="col-12 col-md-3">
@@ -64,7 +64,7 @@
                     
                 </div>
                 <div class="col-12 col-md-2">
-                    <button class="btn-dark" id="reset">重置</button>
+                    <button class="btn-dark rounded" id="reset">Reset</button>
                 </div>
                 
             </div>
@@ -122,7 +122,7 @@
             let autoAddAPicId;
             let autoAddAPic = document.getElementById('auto-add-a-pic');
             autoAddAPic.addEventListener('click' , ()=>{
-                autoAddAPicId = setInterval(addAPicFunc ,  500);
+                autoAddAPicId = setInterval(addAPicFunc ,  700);
             });
 
             //stop add pic
