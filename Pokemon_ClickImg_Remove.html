@@ -17,6 +17,7 @@
         <div class="jumbotron text-center">
             <h1>寶可夢圖鑑列表</h1>
         </div>
+        
         <div class="container">
             <div class="row d-flex w-75 m-auto">
                 <div class="col">
@@ -29,7 +30,6 @@
                         Click - 1
                     </button>
                 </div>
-
                 <div class="col">
                     <button id="auto-add-a-pic" class="btn-primary rounded">
                         Auto Create
@@ -51,7 +51,7 @@
                     </button>
                 </div> -->
                 <div class="col">
-                    <button class="btn-primary" id="addEvent">
+                    <button class="btn-primary" id="addAll">
                         Load All
                     </button>
                 </div>
@@ -63,7 +63,6 @@
                 <div class="col">
                     <button class="btn-dark rounded" id="reset">Remove All</button>
                 </div>
-                
             </div>
         </div>
         <div id="container" class="text-center"></div>
@@ -85,6 +84,7 @@
         <!-- 自訂 -->
         <script>
             const container = document.getElementById('container');
+
             const addAPic = document.getElementById('add-a-pic');
             let pokemons = 1;
             //add a pic
@@ -121,6 +121,9 @@
             autoAddAPic.addEventListener('click' , ()=>{
                 autoAddAPicId = setInterval(addAPicFunc ,  700);
                 autoAddAPic.disabled = true;
+                addAPic.disabled = true;
+                removeAPic.disabled = true;
+                addAll.disabled = true;
             });
 
             //stop add pic
@@ -128,6 +131,9 @@
             stopAddPic.addEventListener('click' , ()=>{
                 clearInterval(autoAddAPicId);
                 autoAddAPic.disabled = false;
+                addAPic.disabled = false;
+                removeAPic.disabled = false;
+                addAll.disabled = false;
             });
             
 
@@ -203,7 +209,7 @@
             // }
 
             // AddEvent
-            let addEvent = document.getElementById('addEvent');
+            let addAll = document.getElementById('addAll');
             let addImg = () =>{
                 while(container.firstChild){
                     container.removeChild(container.firstChild);
@@ -219,7 +225,7 @@
                     container.appendChild(img);
                 }
             }
-            addEvent.addEventListener('click' , addImg);
+            addAll.addEventListener('click' , addImg);
 
             // Reset
             let resetImg = () =>{

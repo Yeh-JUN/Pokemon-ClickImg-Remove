@@ -1,6 +1,8 @@
 .jumbotron{
-    background-image: url(./BG.jpg);
-    background-size: cover;
+    background-image: url(./BGs.jpg);
+    background-size: cover cover;
+    /* background-repeat: no-repeat; */
+    background-position: bottom;
 }
 
 .jumbotron h1{
