@@ -18,24 +18,24 @@
             <h1>寶可夢圖鑑列表</h1>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-2">
+            <div class="row d-flex w-75 m-auto">
+                <div class="col">
                     <button id="add-a-pic" class="btn-success rounded">
                         Click + 1
                     </button>
                 </div>
-                <div class="col-12 col-md-2">
+                <div class="col">
                     <button id="remove-a-pic" class="btn-danger rounded">
                         Click - 1
                     </button>
                 </div>
 
-                <div class="col-12 col-md-2">
+                <div class="col">
                     <button id="auto-add-a-pic" class="btn-primary rounded">
                         Auto Create
                     </button>
                 </div>
-                <div class="col-12 col-md-2">
+                <div class="col">
                     <button id="stop-add-pic" class="btn-danger rounded">
                         Stop Create
                     </button>
@@ -50,21 +50,18 @@
                         載入Pokemon圖鑑列表 JS指定HTML元素attribute屬性
                     </button>
                 </div> -->
-                <!-- <div class="col-12 col-md-2">
-                    <button class="btn-warning" id="addEvent">
-                        載入Pokemon圖鑑列表⽤ addEventListener⽅法註冊
+                <div class="col">
+                    <button class="btn-primary" id="addEvent">
+                        Load All
                     </button>
-                </div> -->
+                </div>
                 <!-- <div class="col-12 col-md-3">
                     <button class="btn-danger" onclick='fetchPokemon_appendChild()'>
                         載入Pokemon圖鑑列表appendChild()
                     </button>
                 </div> -->
-                <div class="col-12 col-md-2">
-                    
-                </div>
-                <div class="col-12 col-md-2">
-                    <button class="btn-dark rounded" id="reset">Reset</button>
+                <div class="col">
+                    <button class="btn-dark rounded" id="reset">Remove All</button>
                 </div>
                 
             </div>
@@ -123,6 +120,7 @@
             let autoAddAPic = document.getElementById('auto-add-a-pic');
             autoAddAPic.addEventListener('click' , ()=>{
                 autoAddAPicId = setInterval(addAPicFunc ,  700);
+                
             });
 
             //stop add pic
@@ -220,7 +218,7 @@
                     container.appendChild(img);
                 }
             }
-            // addEvent.addEventListener('click' , addImg);
+            addEvent.addEventListener('click' , addImg);
 
             // Reset
             let resetImg = () =>{
@@ -228,6 +226,7 @@
                 while(container.firstChild){
                     container.removeChild(container.firstChild);
                 }
+                clearInterval(autoAddAPicId);
                 pokemons = 1;
             }
             reset.addEventListener("click" , resetImg);
